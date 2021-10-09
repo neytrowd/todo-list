@@ -1,0 +1,253 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+html.noscroll {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+body.active {
+  position: relative;
+}
+
+body.active:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #fff, #4ec2e7);
+  padding-top: 50px;
+}
+
+.user {
+  margin: 0 auto;
+  width: 750px;
+  min-height: 450px;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 5px 0 #8a8a8a;
+          box-shadow: 0 3px 5px 0 #8a8a8a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  padding: 50px 0;
+}
+
+.user__quit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 15px;
+  border: none;
+  background: #4ec2e7;
+  color: #fff;
+  cursor: pointer;
+}
+
+.user-block, .user-add {
+  width: 50%;
+  padding: 20px;
+}
+
+.user__title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
+.user-list {
+  padding-left: 30px;
+}
+
+.user-list li {
+  position: relative;
+}
+
+.user-list li:nth-child(n + 2) {
+  margin-top: 30px;
+}
+
+.user-list button {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border: none;
+  padding: 5px 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.user-list button:nth-of-type(1) {
+  right: 0;
+  background: #4ec2e7;
+}
+
+.user-list button:nth-of-type(2) {
+  right: 80px;
+  background: #f5612b;
+}
+
+.user-add {
+  padding: 20px 40px;
+}
+
+.user-add__text, .user-add__password {
+  display: block;
+  padding: 8px 20px;
+  width: 100%;
+}
+
+.user-add__password {
+  margin: 30px 0;
+}
+
+.user-add label input {
+  margin-right: 5px;
+}
+
+.user-add label:nth-of-type(1) {
+  margin: 0 40px 0 0;
+}
+
+.user-add label:nth-of-type(3) {
+  display: block;
+  margin-top: 10px;
+}
+
+.user-add__submit {
+  display: block;
+  font-size: 18px;
+  padding: 8px 20px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background: #4ec2e7;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.user-settings {
+  display: none;
+  width: 500px;
+  height: 600px;
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 30px;
+  text-align: center;
+}
+
+.user-settings-inner {
+  position: relative;
+  height: 100%;
+}
+
+.user-settings__text, .user-settings__password {
+  display: block;
+  padding: 8px 20px;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.user-settings label:nth-of-type(2) {
+  margin: 0 10px;
+}
+
+.user-settings label input {
+  margin-right: 5px;
+}
+
+.user-settings-permission {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 200px;
+  margin-top: 30px;
+}
+
+.user-settings-active, .user-settings-available {
+  width: 47%;
+  border: 1px solid #8a8989;
+  text-align: start;
+  padding: 10px;
+}
+
+.user-settings__title {
+  text-align: center;
+  font-weight: 600;
+}
+
+.user-settings-list {
+  list-style: none;
+  padding: 30px;
+  min-height: 150px;
+}
+
+.user-settings-list li {
+  color: #fff;
+  padding: 3px;
+  background: #4ec2e7;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.user-settings-list li:nth-child(n + 2) {
+  margin-top: 10px;
+}
+
+.user-settings__exit, .user-settings__submit {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 80px;
+  padding: 8px;
+  background: #4ec2e7;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.user-settings__submit {
+  right: 0;
+}
+
+.user-settings__exit {
+  right: 100px;
+}

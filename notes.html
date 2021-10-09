@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+   <link rel="stylesheet" href="css/notes.css">
+</head>
+
+<body>
+   <div class="wrapper" id="wrap">
+      <div class="notes">
+
+         <div class="notes-head">
+            <div class="notes-head__title">Tasks</div>
+            <div class="notes-data" id="inputData">
+               <input type="date" id="date" class="notes-data__date">
+               <input type="text" id="text" class="notes-data__text" placeholder="Add note...">
+               <input type="checkbox" id="important" class="notes-data__important">
+               <label for="important" class="notes-data__lab"></label>
+               <button id="addButton" class="notes-data__add">Add note</button>
+            </div>
+            <div class="notes-user">
+               <img src="images/avatar.png" class="notes-user__avatar" alt="avatar">
+               <span class="notes-user__name" id="userName">Admin</span>
+               <ul class="notes-user__links" id="userPages">
+                  <li id="logout">Logout</li>
+                  <li id="profile">My profile</li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="notes-tab">
+            <input type="radio" name="tab" id="all" checked>
+            <input type="radio" name="tab" id="process">
+
+            <div class="notes-tab__element">
+               <label for="all" class="notes-tab__link">
+                  <span class="far fa-list-alt"></span>
+                  <span>All Tasks</span>
+               </label>
+               <label for="process" class="notes-tab__link">
+                  <span class="fas fa-stream"></span>
+                  <span>Category</span>
+               </label>
+            </div>
+
+            <div class="notes-tab__block" id="noteTabBlock">
+               <div class="notes-tab__item">
+                  <div class="notes-tab__search">
+                     <input type="text" name="search" id="searchText" class="notes-tab__search-text"
+                        placeholder="Search...">
+                  </div>
+                  <ol class="notes-tab__list" id="allNotes"></ol>
+               </div>
+
+               <div class="notes-tab__item">
+                  <div class="notes-tab__inner" id="categoryItemsBlock">
+                     <div class="notes-tab__category">
+                        <p class="notes-tab__category-title">In process</p>
+                        <ol class="notes-tab__category-list" id="processNotes" data-block='process'></ol>
+                     </div>
+                     <div class="notes-tab__category">
+                        <p class="notes-tab__category-title">Important</p>
+                        <ol class="notes-tab__category-list" id="importantNotes" data-block='important'></ol>
+                     </div>
+                     <div class="notes-tab__category">
+                        <p class="notes-tab__category-title">Done</p>
+                        <ol class="notes-tab__category-list" id="doneNotes" data-block='done'></ol>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="notes-tab__edit" id="editBlock">
+            <input type="text" id="editText" class="notes-tab__edit-text">
+            <input type="date" id="editDate" class="notes-tab__edit-date">
+            <div>
+               <button id="editExit" class="notes-tab__edit-exit">Exit</button>
+               <button id="editSave" class="notes-tab__edit-save">Save</button>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <script src="js/Data/Storage.js"></script>
+   <script src="js/utils.js"></script>
+   <script src="js/notes.js"></script>
+</body>
+
+</html>

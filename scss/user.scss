@@ -1,0 +1,87 @@
+*,
+*:before,
+*:after {
+   margin: 0;
+   padding: 0;
+   outline: none;
+   box-sizing: border-box;
+}
+
+$white: #fff;
+$black: #000;
+$skyBlue: #4ec2e7;
+$darkBlue: #206c85;
+$gray: rgb(109, 107, 107);
+$orange: rgb(245, 97, 43);
+$yellow: rgb(241, 178, 59);
+$green: rgb(0, 197, 0);
+
+.wrapper {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(120deg, #fff, #4ec2e7);
+}
+
+.user {
+   width: 400px;
+   height: 550px;
+   background: $white;
+   padding: 30px 50px;
+   font-family: Arial, Helvetica, sans-serif;
+   box-shadow: 0 3px 5px 0 rgb(131, 130, 130);
+
+   &__title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 25px;
+   }
+
+   label{
+      display: block;
+   }
+
+   input[type="text"],
+   input[type="password"] {
+      display: block;
+      margin:5px 0 20px 0;
+   }
+
+   label:nth-child(n + 4) {
+      display: inline-block;
+   }
+
+   label:nth-child(5) {
+      margin-left: 20px;
+   }
+
+   &__login,
+   &__password {
+      width: 100%;
+      padding: 8px 15px;
+   }
+
+   &__bio {
+      width: 100%;
+      resize: none;
+      height: 100px;
+      padding: 10px;
+      margin-top: 20px;
+   }
+
+   &__action {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      button {
+         width: 40%;
+         border: none;
+         background: $skyBlue;
+         color: $white;
+         padding: 10px 15px;
+         cursor: pointer;
+      }
+   }
+}

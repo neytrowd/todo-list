@@ -1,0 +1,254 @@
+*,
+*:before,
+*:after {
+   margin: 0;
+   padding: 0;
+   outline: none;
+   box-sizing: border-box;
+}
+
+html {
+   overflow-y: scroll;
+}
+
+html.noscroll {
+   position: fixed;
+   height: 100%;
+   width: 100%;
+}
+
+body.active {
+   position: relative;
+   &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000;
+      opacity: 0.7;
+      z-index: 2;
+   }
+}
+
+$white: #fff;
+$black: #000;
+$skyBlue: #4ec2e7;
+$darkBlue: #206c85;
+$gray: rgb(109, 107, 107);
+$orange: rgb(245, 97, 43);
+$yellow: rgb(241, 178, 59);
+$green: rgb(0, 197, 0);
+
+.wrapper {
+   min-height: 100vh;
+   background: linear-gradient(120deg, #fff, #4ec2e7);
+   padding-top: 50px;
+}
+
+.user {
+   margin: 0 auto;
+   width: 750px;
+   min-height: 450px;
+   background: $white;
+   box-shadow: 0 3px 5px 0 rgb(138, 138, 138);
+   display: flex;
+   justify-content: space-between;
+   font-family: Arial, Helvetica, sans-serif;
+   position: relative;
+   padding: 50px 0;
+
+   &__quit {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 5px 15px;
+      border: none;
+      background: $skyBlue;
+      color: #fff;
+      cursor: pointer;
+   }
+
+   &-block,
+   &-add {
+      width: 50%;
+      padding: 20px;
+   }
+
+   &__title {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 40px;
+   }
+
+   &-list {
+      padding-left: 30px;
+      li {
+         position: relative;
+         &:nth-child(n + 2) {
+            margin-top: 30px;
+         }
+      }
+
+      button {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         border: none;
+         padding: 5px 10px;
+
+         color: #fff;
+         cursor: pointer;
+      }
+
+      button:nth-of-type(1) {
+         right: 0;
+         background: $skyBlue;
+      }
+
+      button:nth-of-type(2) {
+         right: 80px;
+         background: $orange;
+      }
+   }
+
+   &-add {
+      padding: 20px 40px;
+
+      &__text,
+      &__password {
+         display: block;
+         padding: 8px 20px;
+         width: 100%;
+      }
+
+      &__password {
+         margin: 30px 0;
+      }
+
+      label {
+         input {
+            margin-right: 5px;
+         }
+         &:nth-of-type(1) {
+            margin: 0 40px 0 0;
+         }
+         &:nth-of-type(3) {
+            display: block;
+            margin-top: 10px;
+         }
+      }
+
+      &__submit {
+         display: block;
+         font-size: 18px;
+         padding: 8px 20px;
+         margin: 0 auto;
+         margin-top: 30px;
+         background: $skyBlue;
+         border: none;
+         color: #fff;
+         cursor: pointer;
+         font-size: 14px;
+      }
+   }
+
+   &-settings {
+      display: none;
+
+      width: 500px;
+      height: 600px;
+      background: #fff;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      padding: 30px;
+      text-align: center;
+
+      &-inner {
+         position: relative;
+         height: 100%;
+      }
+
+      &__text,
+      &__password {
+         display: block;
+         padding: 8px 20px;
+         width: 80%;
+         margin: 0 auto;
+         margin-bottom: 30px;
+      }
+
+      label:nth-of-type(2) {
+         margin: 0 10px;
+      }
+
+      label input {
+         margin-right: 5px;
+      }
+
+      &-permission {
+         display: flex;
+         justify-content: space-between;
+         min-height: 200px;
+         margin-top: 30px;
+      }
+
+      &-active,
+      &-available {
+         width: 47%;
+         border: 1px solid rgb(138, 137, 137);
+         text-align: start;
+         padding: 10px;
+      }
+
+      &__title {
+         text-align: center;
+         font-weight: 600;
+      }
+
+      &-list {
+         list-style: none;
+         padding: 30px;
+         min-height: 150px;
+
+         li {
+            color: #fff;
+            padding: 3px;
+            background: $skyBlue;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+         }
+
+         li:nth-child(n + 2) {
+            margin-top: 10px;
+         }
+      }
+
+      &__exit,
+      &__submit {
+         position: absolute;
+         bottom: 0;
+         display: block;
+         width: 80px;
+         padding: 8px;
+         background: $skyBlue;
+         border: none;
+         color: #fff;
+         cursor: pointer;
+      }
+
+      &__submit {
+         right: 0;
+      }
+
+      &__exit {
+         right: 100px;
+      }
+   }
+}

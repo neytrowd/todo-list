@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+   <div class="wrapper" id="wrap">
+      <div class="user">
+         <button class="user__quit" id="quit">Back</button>
+
+         <div class="user-block">
+            <p class="user__title">User list</p>
+            <ol class="user-list" id="userList"></ol>
+         </div>
+
+         <div class="user-add">
+            <p class="user__title">Add new user</p>
+            <input type="text" id="addLogin" class="user-add__text" placeholder="Login">
+            <input type="password" class="user-add__password" id="addPassword" placeholder="Password">
+            <label><input type="checkbox" id="addPasswordShow">Show Password</label>
+            <label><input type="checkbox" id="addAdmin">Make admin</label>
+            <label><input type="checkbox" id="addPasswordGen">Generate</label>
+            <button class="user-add__submit" id="addUserData">Add user</button>
+         </div>
+
+         <div class="user-settings" id="settingsBlock">
+            <div class="user-settings-inner">
+               <p class="user__title">Settings</p>
+               <input type="text" id="changeLogin" class="user-settings__text" placeholder="Login">
+               <input type="password" id="changePassword" class="user-settings__password" placeholder="Password">
+               <label><input type="checkbox" id="changePassShow">Show Password</label>
+               <label><input type="checkbox" id="changeAdmin">Make admin</label>
+               <label><input type="checkbox" id="changePassGen">Generate</label>
+
+               <div class="user-settings-permission" id="allPermissions">
+                  <div class="user-settings-active">
+                     <p class="user-settings__title">Active</p>
+                     <ul class="user-settings-list" id="activePerm" data-permission="active"></ul>
+                  </div>
+                  <div class="user-settings-available">
+                     <p class="user-settings__title">Available</p>
+                     <ul class="user-settings-list" id="avialablePerm" data-permission="avialable"></ul>
+                  </div>
+               </div>
+
+               <button class="user-settings__exit" id="dontSave">Exit</button>
+               <button class="user-settings__submit" id="changeSave">Save</button>
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+   <script src="js/utils.js"></script>
+   <script src="js/admin.js"></script>
+</body>
+
+</html>

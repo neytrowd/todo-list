@@ -1,0 +1,553 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+html.noscroll {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+body.active {
+  position: relative;
+}
+
+body.active:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 5;
+  opacity: 0.7;
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.state {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  padding: 20px;
+  top: 100px;
+  right: -300px;
+  -webkit-box-shadow: 0 0 5px 0 #a09f9f;
+          box-shadow: 0 0 5px 0 #a09f9f;
+  background: #fff;
+  -webkit-transition: 0.5s all linear;
+  transition: 0.5s all linear;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.notes {
+  min-height: 100vh;
+  background: #f8f8f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.notes-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.notes-head__title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+  color: #6d6b6b;
+}
+
+.notes-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+}
+
+.notes-user:hover .notes-user__links {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.notes-user__avatar {
+  width: 35px;
+  height: auto;
+}
+
+.notes-user__name {
+  color: #6d6b6b;
+  padding-left: 10px;
+}
+
+.notes-user__links {
+  cursor: pointer;
+  list-style: none;
+  position: absolute;
+  top: 150%;
+  background: #fff;
+  -webkit-box-shadow: 0 0 5px 0 #6d6b6b;
+          box-shadow: 0 0 5px 0 #6d6b6b;
+  left: -20px;
+  width: 130%;
+  text-align: center;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transition: 0.3s all linear;
+  transition: 0.3s all linear;
+  z-index: 2;
+}
+
+.notes-user__links li {
+  padding: 10px 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.notes-user__links li:hover {
+  color: #fff;
+  background: #4ec2e7;
+}
+
+.notes-data {
+  -ms-flex-preferred-size: 750px;
+      flex-basis: 750px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.notes-data__date {
+  width: 170px;
+  border-radius: 50px;
+  padding-left: 10px;
+  border: 1px solid #4ec2e7;
+}
+
+.notes-data__date::-webkit-calendar-picker-indicator {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.notes-data__text {
+  width: 350px;
+  font-size: 15px;
+  padding: 11.5px 20px;
+  border: 1px solid #4ec2e7;
+  border-radius: 50px;
+}
+
+.notes-data__text::-webkit-input-placeholder {
+  color: #6d6b6b;
+}
+
+.notes-data__text:-ms-input-placeholder {
+  color: #6d6b6b;
+}
+
+.notes-data__text::-ms-input-placeholder {
+  color: #6d6b6b;
+}
+
+.notes-data__text::placeholder {
+  color: #6d6b6b;
+}
+
+.notes-data__important {
+  display: none;
+}
+
+.notes-data__important:checked ~ .notes-data__lab {
+  background-color: #206c85;
+}
+
+.notes-data__important:checked ~ .notes-data__lab:before {
+  left: 50%;
+  background-color: #4ec2e7;
+}
+
+.notes-data__lab {
+  width: 35px;
+  height: 15px;
+  display: inline-block;
+  background-color: #6d6b6b;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.notes-data__lab:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #fff;
+  -webkit-transition: 0.3s all linear;
+  transition: 0.3s all linear;
+}
+
+.notes-data__add {
+  width: 100px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 50px;
+  background-color: #4ec2e7;
+}
+
+.notes-tab {
+  min-height: calc(100vh - 82px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #6d6b6b;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.notes-tab__element {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  background: #fff;
+}
+
+.notes-tab__element label {
+  display: block;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.notes-tab__element span {
+  font-size: 18px;
+}
+
+.notes-tab__element span:nth-child(1) {
+  margin-right: 10px;
+}
+
+.notes-tab__block {
+  -ms-flex-preferred-size: 85%;
+      flex-basis: 85%;
+}
+
+.notes-tab input[type="radio"] {
+  display: none;
+}
+
+.notes-tab input[type="radio"]:nth-child(1):checked ~ .notes-tab__element .notes-tab__link:nth-child(1) {
+  color: #fff;
+  background-color: #4ec2e7;
+}
+
+.notes-tab input[type="radio"]:nth-child(1):checked ~ .notes-tab__block .notes-tab__item:nth-child(1) {
+  display: block;
+}
+
+.notes-tab input[type="radio"]:nth-child(2):checked ~ .notes-tab__element .notes-tab__link:nth-child(2) {
+  color: #fff;
+  background-color: #4ec2e7;
+}
+
+.notes-tab input[type="radio"]:nth-child(2):checked ~ .notes-tab__block .notes-tab__item:nth-child(2) {
+  display: block;
+}
+
+.notes-tab__link {
+  padding: 15px;
+  font-size: 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.notes-tab__item {
+  display: none;
+  padding: 30px;
+}
+
+.notes-tab__search-text {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 15px;
+  padding: 10px 20px;
+  border: 1px solid #4ec2e7;
+  background-color: transparent;
+  border-radius: 50px;
+}
+
+.notes-tab__list {
+  width: 95%;
+  margin: 50px auto;
+  list-style: none;
+}
+
+.notes-tab__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 40px 15px 80px;
+  background: #fff;
+  border-radius: 50px;
+  position: relative;
+}
+
+.notes-tab__list-item p:nth-child(1) {
+  cursor: pointer;
+}
+
+.notes-tab__list-item:nth-child(n + 2) {
+  margin-top: 10px;
+}
+
+.notes-tab__list-item:before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: #f5612b;
+  -webkit-box-shadow: 0 0 5px 0 #f5612b;
+          box-shadow: 0 0 5px 0 #f5612b;
+}
+
+.notes-tab .important:before {
+  background: #f1b23b;
+  -webkit-box-shadow: 0 0 5px 0 #f1b23b;
+          box-shadow: 0 0 5px 0 #f1b23b;
+}
+
+.notes-tab .done p {
+  text-decoration: line-through;
+}
+
+.notes-tab .done:before {
+  background: #00c500;
+  -webkit-box-shadow: 0 0 5px 0 #00c500;
+          box-shadow: 0 0 5px 0 #00c500;
+}
+
+.notes-tab__list-name {
+  width: 50%;
+}
+
+.notes-tab__list-date {
+  width: 20%;
+}
+
+.notes-tab__list-delete, .notes-tab__list-edit {
+  border: none;
+  padding: 8px 0;
+  width: 100px;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.notes-tab__list-delete {
+  background: #f5612b;
+}
+
+.notes-tab__list-edit {
+  background: #4ec2e7;
+}
+
+.notes-tab__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.notes-tab__category {
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
+}
+
+.notes-tab__category:nth-child(n + 2) {
+  border-left: 1px solid #b3b3b3;
+  padding-left: 5px;
+}
+
+.notes-tab__category-title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.notes-tab__category-list {
+  list-style: none;
+  min-height: calc(100vh - 180px);
+}
+
+.notes-tab__category-item {
+  width: 95%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #fff;
+  padding: 15px 10px;
+  position: relative;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 5px 0 #a5a5a5;
+          box-shadow: 0 2px 5px 0 #a5a5a5;
+}
+
+.notes-tab__category-item p:nth-child(2) {
+  text-decoration: underline;
+}
+
+.notes-tab__category-item:nth-child(n + 2) {
+  margin-top: 10px;
+}
+
+.notes-tab__category-item:hover .notes-tab__category-delete,
+.notes-tab__category-item:hover .notes-tab__category-edit {
+  opacity: 1;
+}
+
+.notes-tab__category-name {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-bottom: 10px;
+}
+
+.notes-tab__category-delete, .notes-tab__category-edit {
+  position: absolute;
+  bottom: 10px;
+  width: 70px;
+  border: none;
+  padding: 5px 10px;
+  color: #fff;
+  -webkit-transition: 0.5s all linear;
+  transition: 0.5s all linear;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.notes-tab__category-delete {
+  right: 100px;
+  background: #f5612b;
+}
+
+.notes-tab__category-edit {
+  right: 10px;
+  background: #4ec2e7;
+}
+
+.notes-tab__edit {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 350px;
+  height: 250px;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px 0 #5c5b5b;
+          box-shadow: 0 0 5px 0 #5c5b5b;
+  padding: 50px 40px;
+  z-index: 5;
+  display: none;
+}
+
+.notes-tab__edit-text {
+  width: 100%;
+  padding: 8px 15px;
+}
+
+.notes-tab__edit-date {
+  width: 100%;
+  padding: 5px 15px;
+  margin: 30px 0;
+}
+
+.notes-tab__edit div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.notes-tab__edit button {
+  width: 45%;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.notes-tab__edit-exit {
+  background: #f5612b;
+}
+
+.notes-tab__edit-save {
+  background: #4ec2e7;
+}

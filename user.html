@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/user.css">
+   <title>My profile</title>
+</head>
+
+<body>
+   <div class="wrapper" id="wrap">
+      <div class="user">
+         <p class="user__title">Settings</p>
+         <form action="#" class="user-form">
+            <label>
+               <span>Login</span>
+               <input type="text" class="user__login" id="userLogin">
+            </label>
+            <label>
+               <span>Password</span>
+               <input type="password" class="user__password" id="userPassword">
+            </label>
+            <label>
+               <span>Confirm password</span>
+               <input type="password" class="user__password" id="userConfirm">
+            </label>
+            <label>
+               <input type="checkbox" id="userPassGen">
+               <span>Generate</span>
+            </label>
+            <label>
+               <input type="checkbox" id="userPassShow">
+               <span>Show Password</span>
+            </label>
+            <textarea class="user__bio" id="userBio"></textarea>
+            <div class="user__action">
+               <button class="user__exit" id="userExit">Exit</button>
+               <button class="user__save" id="userSave">Save</button>
+            </div>
+         </form>
+      </div>
+   </div>
+
+   <script src="js/utils.js"></script>
+   <script src="js/user.js"></script>
+</body>
+
+</html>

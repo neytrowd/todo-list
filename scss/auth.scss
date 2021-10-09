@@ -1,0 +1,68 @@
+*,
+*:before,
+*:after {
+   margin: 0;
+   padding: 0;
+   outline: none;
+   box-sizing: border-box;
+}
+
+$white: #fff;
+$black: #000;
+$skyBlue: #4ec2e7;
+$darkBlue: #206c85;
+$gray: rgb(109, 107, 107);
+$orange: rgb(245, 97, 43);
+$yellow: rgb(241, 178, 59);
+$green: rgb(0, 197, 0);
+
+.wrapper {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(120deg, #fff, #4ec2e7);
+}
+
+.auth {
+   width: 350px;
+   height: 400px;
+   background: $white;
+   box-shadow: 0 5px 10px 0 $gray;
+   border-radius: 5px;
+   position: relative;
+   padding: 120px 30px 0 30px;
+
+   &-logo {
+      top: 0;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -45%);
+      width: 100px;
+      overflow: hidden;
+      border-radius: 50%;
+
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+
+   &__login,
+   &__password {
+      display: block;
+      width: 100%;
+      margin-bottom: 25px;
+      padding: 10px 20px;
+   }
+
+   &__submit {
+      width: 100%;
+      background: $orange;
+      border: none;
+      padding: 15px;
+      border-radius: 3px;
+      color: $white;
+      cursor: pointer;
+   }
+}
